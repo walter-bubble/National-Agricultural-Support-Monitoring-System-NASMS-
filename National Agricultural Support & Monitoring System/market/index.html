@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASMS – Buyers &amp; Sellers Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../shared/shared.css">
+  <link rel="stylesheet" href="../shared/nav.css">
+  <link rel="stylesheet" href="../shared/footer.css">
+  <link rel="stylesheet" href="market.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+
+  <main class="section">
+    <div class="section-inner">
+      <div class="section-label">Agricultural Marketplace</div>
+      <h2 class="section-title animate">Buyers &amp; Sellers</h2>
+      <p class="section-sub animate">Connect with verified buyers for your produce or source products directly from farmers.</p>
+
+      <div class="market-tabs animate">
+        <button class="market-tab active" data-tab="buyers" onclick="switchTab('buyers')">🛒 Buyers</button>
+        <button class="market-tab"        data-tab="sellers" onclick="switchTab('sellers')">🌾 Sellers</button>
+      </div>
+
+      <div id="tab-buyers"  class="market-grid"></div>
+      <div id="tab-sellers" class="market-grid" style="display:none;"></div>
+    </div>
+  </main>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="contactTitle">Send Inquiry</h3>
+        <button class="modal-close" onclick="closeContactModal()"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea id="contactMsg" rows="4" placeholder="Describe your produce, quantity, and preferred price…"></textarea>
+      </div>
+      <div class="form-group" style="margin-top:14px;">
+        <label>Your Phone Number</label>
+        <input type="tel" id="contactPhone" placeholder="+254 7XX XXX XXX">
+      </div>
+      <button class="btn-full" style="margin-top:20px;" onclick="submitContact()">
+        <i class="fa fa-paper-plane"></i> Send Inquiry
+      </button>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+  <script src="../shared/nav.js"></script>
+  <script src="../shared/footer.js"></script>
+  <script src="market.js"></script>
+</body>
+</html>

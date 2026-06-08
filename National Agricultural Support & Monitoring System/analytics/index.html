@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASMS – Production Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../shared/shared.css">
+  <link rel="stylesheet" href="../shared/nav.css">
+  <link rel="stylesheet" href="../shared/footer.css">
+  <link rel="stylesheet" href="analytics.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+
+  <main class="section">
+    <div class="section-inner">
+      <div class="section-label">Production Analytics</div>
+      <h2 class="section-title animate">Farm Production History</h2>
+
+      <div class="filter-row animate">
+        <select class="filter-select" id="cropFilter" onchange="applyFilters()">
+          <option value="all">All Crops</option>
+          <option value="maize">Maize</option>
+          <option value="beans">Beans</option>
+          <option value="potatoes">Potatoes</option>
+        </select>
+        <select class="filter-select" id="yearFilter" onchange="applyFilters()">
+          <option value="all">2019–2025</option>
+          <option value="recent">2022–2025</option>
+        </select>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="cards-grid animate animate-delay-1">
+        <div class="dash-card">
+          <div class="dash-card-icon green-bg">🌽</div>
+          <h4>Maize 2025</h4>
+          <div class="value">420 bags</div>
+          <div class="sub" style="color:#1a7a3c;">↑ 18% from 2024</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon" style="background:#e8f5e8;">🥜</div>
+          <h4>Beans 2025</h4>
+          <div class="value">185 bags</div>
+          <div class="sub" style="color:#1a7a3c;">↑ 8% from 2024</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon earth-bg">🥔</div>
+          <h4>Potatoes 2025</h4>
+          <div class="value">310 bags</div>
+          <div class="sub" style="color:#9a2020;">↓ 5% from 2024</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon blue-bg">💵</div>
+          <h4>Total Revenue</h4>
+          <div class="value">KES 2.1M</div>
+          <div class="sub" style="color:#1a7a3c;">↑ 22% from 2024</div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="analytics-grid animate animate-delay-2">
+        <div class="chart-panel">
+          <h3>Annual Production (bags)</h3>
+          <canvas id="barChart" height="220"></canvas>
+        </div>
+        <div class="chart-panel">
+          <h3>Revenue by Crop (KES)</h3>
+          <canvas id="doughnutChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-panel animate animate-delay-3" style="margin-bottom:24px;">
+        <h3>Monthly Production Trend (2025)</h3>
+        <canvas id="lineChart" height="100"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <script src="../shared/nav.js"></script>
+  <script src="../shared/footer.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASMS – Farm Inputs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../shared/shared.css">
+  <link rel="stylesheet" href="../shared/nav.css">
+  <link rel="stylesheet" href="../shared/footer.css">
+  <link rel="stylesheet" href="products.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+
+  <main class="section">
+    <div class="section-inner">
+      <div class="section-label">Farm Inputs Catalogue</div>
+      <h2 class="section-title animate">Government-Subsidised Agricultural Inputs</h2>
+      <p class="section-sub animate">Access certified and subsidised seeds, fertilizers, and equipment through your NASMS account.</p>
+
+      <div class="filter-row animate">
+        <select class="filter-select" id="catFilter" onchange="filterProducts()">
+          <option value="">All Categories</option>
+          <option value="seed">Seeds</option>
+          <option value="fertilizer">Fertilizers</option>
+          <option value="pesticide">Pesticides</option>
+          <option value="equipment">Equipment</option>
+        </select>
+        <select class="filter-select" id="availFilter" onchange="filterProducts()">
+          <option value="">All Availability</option>
+          <option value="in">In Stock</option>
+          <option value="limited">Limited</option>
+          <option value="out">Out of Stock</option>
+        </select>
+        <input type="text" class="filter-select" id="searchFilter" placeholder="🔍  Search products…" oninput="filterProducts()" style="min-width:200px;">
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+      <p id="noResults" style="display:none; text-align:center; color:var(--text-light); padding:32px;">No products match your filters.</p>
+    </div>
+  </main>
+
+  <!-- Request Modal -->
+  <div class="modal-overlay" id="reqModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="reqModalTitle">Request Item</h3>
+        <button class="modal-close" onclick="closeReqModal()"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="form-group">
+        <label>Quantity</label>
+        <input type="number" id="reqQty" placeholder="e.g. 5" min="1">
+      </div>
+      <div class="form-group" style="margin-top:14px;">
+        <label>Delivery Location</label>
+        <input type="text" id="reqLocation" placeholder="Your ward / sub-location">
+      </div>
+      <button class="btn-full" style="margin-top:20px;" onclick="submitRequest()">
+        <i class="fa fa-check"></i> Confirm Request
+      </button>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+  <script src="../shared/nav.js"></script>
+  <script src="../shared/footer.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>

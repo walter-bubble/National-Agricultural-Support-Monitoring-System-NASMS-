@@ -1,0 +1,10 @@
+/* ═══════════════════════════════════════════════════════════
+   NASMS – analytics/analytics.css
+   ═══════════════════════════════════════════════════════════ */
+.analytics-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 22px; margin-bottom: 22px; }
+.chart-panel {
+  background: white; border-radius: var(--radius); padding: 22px;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+}
+.chart-panel h3 { font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 16px; }
+@media (max-width: 900px) { .analytics-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASMS – Chat Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../shared/shared.css">
+  <link rel="stylesheet" href="../shared/nav.css">
+  <link rel="stylesheet" href="../shared/footer.css">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+
+  <main class="chat-page">
+    <div class="chat-container">
+      <!-- Sidebar: quick links -->
+      <aside class="chat-sidebar">
+        <h3>Quick Topics</h3>
+        <button class="quick-btn" onclick="quickMsg('How do I register as a farmer?')">🌾 Farmer Registration</button>
+        <button class="quick-btn" onclick="quickMsg('How do I apply for a government loan?')">💰 Loan Applications</button>
+        <button class="quick-btn" onclick="quickMsg('How do I request farm inputs?')">🌱 Farm Inputs</button>
+        <button class="quick-btn" onclick="quickMsg('How do I check the weather forecast?')">🌤 Weather Forecasts</button>
+        <button class="quick-btn" onclick="quickMsg('How do I connect with buyers?')">🏪 Market Access</button>
+        <button class="quick-btn" onclick="quickMsg('What is my loan repayment status?')">📋 Loan Repayment</button>
+        <div class="contact-box">
+          <h4>Direct Contact</h4>
+          <p>📞 Toll-Free: <strong>0800 720 093</strong></p>
+          <p>✉️ info@nasms.go.ke</p>
+          <p>🕗 Mon–Fri: 8AM – 5PM</p>
+        </div>
+      </aside>
+
+      <!-- Main Chat Window -->
+      <div class="chat-main">
+        <div class="chat-head">
+          <div class="agent-avatar">🤖</div>
+          <div>
+            <h2>NASMS Support Agent</h2>
+            <p>Government Agricultural Helpdesk · <span class="online-dot"></span> Online</p>
+          </div>
+        </div>
+
+        <div class="messages-area" id="messagesArea">
+          <div class="msg-row bot">
+            <div class="msg-avatar">🤖</div>
+            <div class="msg-bubble bot-bubble">
+              Hello! Welcome to the NASMS Support Centre. I'm here to help you with any questions about our agricultural services. How can I assist you today?
+            </div>
+          </div>
+          <div class="msg-row bot">
+            <div class="msg-avatar">🤖</div>
+            <div class="msg-bubble bot-bubble">
+              You can ask me about:<br>
+              🌾 Farmer registration &nbsp;&nbsp; 💰 Loan applications<br>
+              🌱 Farm inputs &nbsp;&nbsp; 📊 Production analytics<br>
+              🌤 Weather advisories &nbsp;&nbsp; 🏪 Marketplace
+            </div>
+          </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator" style="display:none;">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+
+        <div class="chat-input-area">
+          <input type="text" id="chatInput" placeholder="Type your message…" aria-label="Chat message">
+          <button onclick="sendMessage()" aria-label="Send">
+            <i class="fa fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <script src="../shared/nav.js"></script>
+  <script src="../shared/footer.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

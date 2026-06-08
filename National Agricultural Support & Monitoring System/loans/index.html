@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASMS – Government Loans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../shared/shared.css">
+  <link rel="stylesheet" href="../shared/nav.css">
+  <link rel="stylesheet" href="../shared/footer.css">
+  <link rel="stylesheet" href="loans.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+
+  <main class="section">
+    <div class="section-inner">
+      <div class="section-label">Financial Services</div>
+      <h2 class="section-title animate">Government Loan Programs</h2>
+      <p class="section-sub animate">Access affordable credit designed to support agricultural growth and food security.</p>
+
+      <div class="loans-grid">
+        <div class="loan-card animate animate-delay-1">
+          <div class="loan-card-header">
+            <div>
+              <h3>Crop Production Loan</h3>
+              <div class="loan-amount">KES 50,000 – 500,000</div>
+            </div>
+            <span class="badge badge-green">Open</span>
+          </div>
+          <p>Subsidised credit for smallholder farmers to finance seasonal crop production including purchase of inputs, land preparation, and harvesting.</p>
+
+          <!--loan details-->
+
+          <div class="loan-details">
+            <div class="loan-detail"><span>Interest Rate</span><strong></strong></div>
+            <div class="loan-detail"><span>Duration</span><strong></strong></div>
+            <div class="loan-detail"><span>Collateral</span><strong>Title Deed</strong></div>
+            <div class="loan-detail"><span>Processing</span><strong></strong></div>
+          </div>
+          <button class="btn-full" onclick="openApplyModal('Crop Production Loan')">Apply Now <i class="fa fa-arrow-right"></i></button>
+        </div>
+
+        <div class="loan-card animate animate-delay-1">
+          <div class="loan-card-header">
+            <div>
+              <h3>Livestock Development Fund</h3>
+              <div class="loan-amount">KES 100,000 – 2,000,000</div>
+            </div>
+            <span class="badge badge-green">Open</span>
+          </div>
+          <p>Long-term financing for livestock farmers to purchase breeding stock, build infrastructure, and scale dairy or beef operations.</p>
+          <div class="loan-details">
+            <div class="loan-detail"><span>Interest Rate</span><strong>.</strong></div>
+            <div class="loan-detail"><span>Duration</span><strong></strong></div>
+            <div class="loan-detail"><span>Collateral</span><strong>Land or Assets</strong></div>
+            <div class="loan-detail"><span>Processing</span><strong></strong></div>
+          </div>
+          <button class="btn-full" onclick="openApplyModal('Livestock Development Fund')">Apply Now <i class="fa fa-arrow-right"></i></button>
+        </div>
+
+        <div class="loan-card animate animate-delay-2">
+          <div class="loan-card-header">
+            <div>
+              <h3>Agri-Tech &amp; Irrigation Loan</h3>
+              <div class="loan-amount">KES 200,000 – 5,000,000</div>
+            </div>
+            <span class="badge badge-yellow">Under Review</span>
+          </div>
+          <p>Finance for purchasing irrigation equipment, greenhouses, solar-powered pumps, and modern precision farming technologies.</p>
+          <div class="loan-details">
+            <div class="loan-detail"><span>Interest Rate</span><strong></strong></div>
+            <div class="loan-detail"><span>Duration</span><strong></strong></div>
+            <div class="loan-detail"><span>Collateral</span><strong>Equipment / Land</strong></div>
+            <div class="loan-detail"><span>Processing</span><strong></strong></div>
+          </div>
+          <button class="btn-full" style="background:var(--earth-mid);">Join Waitlist</button>
+        </div>
+
+        <div class="loan-card animate animate-delay-2">
+          <div class="loan-card-header">
+            <div>
+              <h3>Youth Agripreneur Fund</h3>
+              <div class="loan-amount">KES 20,000 – 150,000</div>
+            </div>
+            <span class="badge badge-green">Open</span>
+          </div>
+          <p>Targeted at youth aged 18–35 venturing into agriculture. Requires a farm business plan and is mentorship-linked.</p>
+          <div class="loan-details">
+            <div class="loan-detail"><span>Interest Rate</span><strong></strong></div>
+            <div class="loan-detail"><span>Duration</span><strong></strong></div>
+            <div class="loan-detail"><span>Collateral</span><strong>Guarantor</strong></div>
+            <div class="loan-detail"><span>Processing</span><strong></strong></div>
+          </div>
+          <button class="btn-full" onclick="openApplyModal('Youth Agripreneur Fund')">Apply Now <i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- My Applications -->
+      <div class="dash-panel" style="margin-top:36px;" class="animate">
+        <h3>My Loan Applications</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Loan Type</th><th>Amount</th><th>Applied</th><th>Status</th><th>Due Date</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Crop Production Loan</td>
+                <td><strong></strong></td>
+                <td></td>
+                <td><span class="badge badge-green"></span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Youth Agripreneur Fund</td>
+                <td><strong></strong></td>
+                <td></td>
+                <td><span class="badge badge-green"></span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Agri-Tech Loan</td>
+                <td><strong></strong></td>
+                <td></td>
+                <td><span class="badge badge-yellow"></span></td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Apply Modal -->
+  <div class="modal-overlay" id="applyModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Apply for Loan</h3>
+        <button class="modal-close" onclick="closeApplyModal()"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="form-group">
+        <label>Requested Amount (KES)</label>
+        <input type="number" id="loanAmount" placeholder="e.g. 150000">
+      </div>
+      <div class="form-group" style="margin-top:14px;">
+        <label>Purpose</label>
+        <textarea id="loanPurpose" rows="3" placeholder="Brief description of how you will use the funds…"></textarea>
+      </div>
+      <button class="btn-full" style="margin-top:20px;" onclick="submitLoan()">
+        <i class="fa fa-paper-plane"></i> Submit Application
+      </button>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+  <script src="../shared/nav.js"></script>
+  <script src="../shared/footer.js"></script>
+  <script src="loans.js"></script>
+</body>
+</html>

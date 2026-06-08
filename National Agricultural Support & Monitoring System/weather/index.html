@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASMS – Weather Predictions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../shared/shared.css">
+  <link rel="stylesheet" href="../shared/nav.css">
+  <link rel="stylesheet" href="../shared/footer.css">
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+
+  <main class="section">
+    <div class="section-inner">
+      <div class="section-label">Kenya Meteorological Department</div>
+      <h2 class="section-title animate">Weather Predictions</h2>
+
+      <div class="region-row animate">
+        <label>📍 Select Region:</label>
+        <select class="filter-select" id="regionSelect" onchange="updateWeather(this.value)">
+          <option value="muranga">Murang'a County</option>
+          <option value="nakuru">Nakuru County</option>
+          <option value="meru">Meru County</option>
+          <option value="kisumu">Kisumu County</option>
+          <option value="nairobi">Nairobi County</option>
+          <option value="nyeri">Nyeri County</option>
+          <option value="machakos">Machakos County</option>
+        </select>
+      </div>
+
+      <div class="weather-hero animate animate-delay-1" id="weatherHero">
+        <div class="weather-bg-icon" id="wBgIcon">⛅</div>
+        <div class="weather-location" id="wLocation">📍 Murang'a County, Kenya</div>
+        <div class="weather-temp"    id="wTemp">24°C</div>
+        <div class="weather-desc"    id="wDesc">Partly Cloudy with Morning Showers</div>
+        <div class="weather-meta">
+          <span id="wHumidity">💧 Humidity: 72%</span>
+          <span id="wWind">💨 Wind: 12 km/h</span>
+          <span id="wRain">🌧 Rain: 60%</span>
+          <span id="wUV">☀️ UV Index: 4</span>
+        </div>
+      </div>
+
+      <h3 class="forecast-label animate animate-delay-2">7-Day Forecast</h3>
+      <div class="forecast-grid animate animate-delay-2" id="forecastGrid"></div>
+
+      <div class="dash-panel" style="margin-top:24px;" class="animate animate-delay-3">
+        <h3>🌾 Farming Advisory</h3>
+        <div class="advisory-box">
+          <p id="wAdvisory">Loading advisory…</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <script src="../shared/nav.js"></script>
+  <script src="../shared/footer.js"></script>
+  <script src="weather.js"></script>
+</body>
+</html>

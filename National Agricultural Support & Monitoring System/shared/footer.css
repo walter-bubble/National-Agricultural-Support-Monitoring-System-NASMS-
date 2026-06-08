@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════════════════════════
+   NASMS – shared/footer.css
+   Footer styles — imported by every page
+   ═══════════════════════════════════════════════════════════ */
+
+footer {
+  background: var(--green-deep);
+  color: rgba(255,255,255,.75);
+  padding: 64px 24px 24px;
+  margin-top: 60px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.footer-brand p {
+  font-size: 13px; line-height: 1.7; margin-top: 12px; max-width: 300px;
+}
+.footer-logo-wrap { display: flex; align-items: center; gap: 10px; }
+.footer-logo-wrap .icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.footer-logo-wrap strong { color: white; font-size: 15px; }
+.footer-logo-wrap small  { color: rgba(255,255,255,.5); font-size: 11px; }
+.footer-col h4 { color: white; font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+.footer-col a {
+  display: block; color: rgba(255,255,255,.65); font-size: 13px;
+  text-decoration: none; margin-bottom: 9px; transition: .2s;
+}
+.footer-col a:hover { color: white; }
+.footer-contact p { font-size: 13px; line-height: 1.7; margin-bottom: 6px; }
+.footer-social { display: flex; gap: 10px; margin-top: 16px; }
+.social-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.7); font-size: 14px;
+  transition: .2s; cursor: pointer; text-decoration: none;
+}
+.social-icon:hover { background: rgba(255,255,255,.2); color: white; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin-bottom: 24px; }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom a { color: rgba(255,255,255,.65); text-decoration: none; }
+.footer-bottom a:hover { color: white; }
+.footer-links { display: flex; gap: 20px; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1100px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }

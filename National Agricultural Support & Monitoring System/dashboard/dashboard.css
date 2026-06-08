@@ -1,0 +1,91 @@
+/* ═══════════════════════════════════════════════════════════
+   NASMS – dashboard/dashboard.css
+   ═══════════════════════════════════════════════════════════ */
+
+body { padding-top: var(--nav-h); }
+
+.dashboard-layout { display: flex; min-height: calc(100vh - var(--nav-h)); }
+
+/* ─── SIDEBAR ─── */
+.dash-sidebar {
+  width: 240px; flex-shrink: 0;
+  background: var(--green-deep);
+  padding: 24px 16px;
+  display: flex; flex-direction: column; gap: 4px;
+  min-height: 100%;
+}
+.sidebar-user {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 8px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  margin-bottom: 8px;
+}
+.sidebar-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+.sidebar-name { color: white; font-size: 13px; font-weight: 600; }
+.sidebar-id   { color: rgba(255,255,255,.5); font-size: 11px; }
+
+.dash-sidebar a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 9px;
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,.7);
+  text-decoration: none; transition: .2s;
+}
+.dash-sidebar a:hover,
+.dash-sidebar a.active { background: rgba(255,255,255,.12); color: white; }
+.dash-sidebar a i { width: 18px; text-align: center; }
+.dash-sidebar a.signout { margin-top: auto; }
+
+.sidebar-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: rgba(255,255,255,.35);
+  padding: 14px 14px 6px;
+}
+
+/* ─── MAIN CONTENT ─── */
+.dash-content { flex: 1; padding: 32px; background: #f3f7f5; overflow-y: auto; }
+.dash-header  { margin-bottom: 28px; }
+.dash-header h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--text-dark); }
+.dash-header p  { color: var(--text-light); font-size: 14px; margin-top: 4px; }
+.dash-welcome   { font-size: 12px; color: var(--green-mid); font-weight: 600; margin-bottom: 4px; }
+
+/* ─── LAYOUT ROW ─── */
+.dash-row {
+  display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 20px;
+}
+
+/* ─── PROFILE GRID ─── */
+.profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.profile-item { padding: 12px; background: var(--green-pale); border-radius: 9px; }
+.profile-item .label {
+  font-size: 11px; color: var(--text-light); font-weight: 600;
+  text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px;
+}
+.profile-item .val { font-size: 14px; font-weight: 600; }
+
+/* ─── NOTIFICATIONS ─── */
+.notif-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.notif-item:last-child { border-bottom: none; }
+.notif-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.notif-item p    { font-size: 13px; color: var(--text-mid); line-height: 1.5; }
+.notif-item span { font-size: 11px; color: var(--text-light); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .dashboard-layout { flex-direction: column; }
+  .dash-sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; padding: 12px; gap: 6px; min-height: unset; }
+  .sidebar-user { display: none; }
+  .sidebar-title { display: none; }
+  .dash-sidebar a { padding: 8px 12px; font-size: 12px; }
+  .dash-content { padding: 20px; }
+  .dash-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .profile-grid { grid-template-columns: 1fr; }
+}

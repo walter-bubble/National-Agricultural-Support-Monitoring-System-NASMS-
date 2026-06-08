@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASMS – Farmer Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../shared/shared.css">
+  <link rel="stylesheet" href="../shared/nav.css">
+  <link rel="stylesheet" href="../shared/footer.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <div id="nav-container"></div>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">👨‍🌾</div>
+        <div>
+          <div class="sidebar-name">John Kamau</div>
+          <div class="sidebar-id">ID: KE-2024-00142</div>
+        </div>
+      </div>
+      <div class="sidebar-title">Main Menu</div>
+      <a href="index.html"               class="active"><i class="fa fa-th-large"></i> Dashboard</a>
+      <a href="../loans/index.html">      <i class="fa fa-hand-holding-usd"></i> My Loans</a>
+      <a href="../products/index.html">   <i class="fa fa-seedling"></i> Farm Inputs</a>
+      <a href="../market/index.html">     <i class="fa fa-store"></i> Marketplace</a>
+      <a href="../weather/index.html">    <i class="fa fa-cloud-sun"></i> Weather</a>
+      <a href="../analytics/index.html">  <i class="fa fa-chart-bar"></i> Analytics</a>
+      <div class="sidebar-title">Account</div>
+      <a href="#"><i class="fa fa-user"></i> My Profile</a>
+      <a href="#"><i class="fa fa-bell"></i> Notifications
+        <span class="badge badge-red" style="margin-left:auto;">3</span>
+      </a>
+      <a href="../login/index.html" class="signout"><i class="fa fa-sign-out-alt"></i> Sign Out</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dash-content">
+      <div class="dash-header animate">
+        <div class="dash-welcome" id="dateLine">Thursday, 26 February 2026</div>
+        <h2>Good Morning, John! 🌿</h2>
+        <p>Here's an overview of your farm and services status</p>
+      </div>
+
+      <div class="cards-grid animate animate-delay-1">
+        <div class="dash-card">
+          <div class="dash-card-icon green-bg">🌾</div>
+          <h4>Farm Size</h4>
+          <div class="value">8.5 ac</div>
+          <div class="sub"><span class="badge badge-green">Active</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon earth-bg">💰</div>
+          <h4>Loan Balance</h4>
+          <div class="value">KES 42K</div>
+          <div class="sub" style="color:var(--earth-mid);">Repay by Apr 2026</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon blue-bg">🌱</div>
+          <h4>Active Inputs</h4>
+          <div class="value">3</div>
+          <div class="sub"><span class="badge badge-blue">Pending delivery</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon" style="background:#fff0f5;">🌤</div>
+          <h4>Weather Today</h4>
+          <div class="value">24°C</div>
+          <div class="sub" style="color:var(--text-light);">Partly Cloudy</div>
+        </div>
+      </div>
+
+      <div class="dash-row animate animate-delay-2">
+        <div class="dash-panel">
+          <h3>Farmer Profile Summary</h3>
+          <div class="profile-grid">
+            <div class="profile-item"><div class="label">County</div><div class="val">Murang'a</div></div>
+            <div class="profile-item"><div class="label">Farming Type</div><div class="val">Mixed Farming</div></div>
+            <div class="profile-item"><div class="label">Title Deed</div><div class="val">MRG/0022/18</div></div>
+            <div class="profile-item"><div class="label">Registered</div><div class="val">Jan 12, 2024</div></div>
+          </div>
+          <div style="margin-top:22px;">
+            <h3>Production Overview</h3>
+            <canvas id="dashChart" height="120"></canvas>
+          </div>
+        </div>
+        <div class="dash-panel">
+          <h3>Notifications</h3>
+          <div class="notif-item">
+            <div class="notif-dot" style="background:#2d7a4f;"></div>
+            <div><p>Fertilizer request approved and awaiting dispatch.</p><span>2 hours ago</span></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-dot" style="background:#d4a96a;"></div>
+            <div><p>Loan repayment: KES 42,000 due by April 15, 2026.</p><span>Yesterday</span></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-dot" style="background:#4a90d9;"></div>
+            <div><p>Heavy rains expected in Murang'a this weekend.</p><span>2 days ago</span></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-dot" style="background:#e05c5c;"></div>
+            <div><p>New buyer inquiry — 200 bags maize @ KES 3,200/bag.</p><span>3 days ago</span></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="footer-container"></div>
+
+  <script src="../shared/nav.js"></script>
+  <script src="../shared/footer.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
