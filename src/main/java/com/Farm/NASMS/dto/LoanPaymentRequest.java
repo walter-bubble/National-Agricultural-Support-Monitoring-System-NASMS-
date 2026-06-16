@@ -1,6 +1,6 @@
 package com.Farm.NASMS.dto;
 
-import com.Farm.NASMS.PaymentMethod;
+import com.Farm.NASMS.enums.PaymentMethod;
 
 public class LoanPaymentRequest {
     private double amountToPay;

@@ -1,8 +1,8 @@
 package com.Farm.NASMS.dto;
 
-import com.Farm.NASMS.PaymentMethod;
-
 import java.time.LocalDateTime;
+
+import com.Farm.NASMS.enums.PaymentMethod;
 
 public class LoanPaymentResponse {
     private double amountToPay;

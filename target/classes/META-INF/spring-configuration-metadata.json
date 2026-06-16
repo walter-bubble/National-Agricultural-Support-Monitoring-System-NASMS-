@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "weather.api",
+      "type": "com.Farm.NASMS.config.WeatherProperties",
+      "sourceType": "com.Farm.NASMS.config.WeatherProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "weather.api.base-url",
+      "type": "java.lang.String",
+      "sourceType": "com.Farm.NASMS.config.WeatherProperties"
+    },
+    {
+      "name": "weather.api.key",
+      "type": "java.lang.String",
+      "sourceType": "com.Farm.NASMS.config.WeatherProperties"
+    },
+    {
+      "name": "weather.api.units",
+      "type": "java.lang.String",
+      "sourceType": "com.Farm.NASMS.config.WeatherProperties"
+    }
+  ],
+  "hints": []
+}
