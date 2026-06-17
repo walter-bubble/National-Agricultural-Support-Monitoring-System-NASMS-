@@ -2,8 +2,6 @@ package com.Farm.NASMS.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name="farmers", uniqueConstraints = @UniqueConstraint(columnNames = "nationalId"))
 public class Farmer {

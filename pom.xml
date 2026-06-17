@@ -29,32 +29,32 @@
 
     <dependencies>
 
-        <!-- ===== Core Web (Controllers, REST API) ===== -->
+        <!-- Core Web (Controllers, REST API) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- ===== Database (JPA + Hibernate) ===== -->
+        <!-- Database (JPA + Hibernate) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- ===== postgreSQL Driver ===== -->
+        <!-- PostgreSQL Driver -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- ===== Spring Security (SecurityConfig, JWT) ===== -->
+        <!-- Spring Security (SecurityConfig, JWT) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- ===== JWT (JwtUtil) ===== -->
+        <!-- JWT (JwtUtil) -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
@@ -73,35 +73,37 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- ===== Weather API (RestTemplate, WeatherResponse) ===== -->
+        <!-- Weather API (RestTemplate, WeatherResponse) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
-        <!-- ===== Configuration Properties (WeatherProperties) ===== -->
+        <!-- Configuration Properties (WeatherProperties) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
 
-        <!-- ===== Validation (for request DTOs) ===== -->
+        <!-- Validation (for request DTOs) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- ===== Scheduling (SeasonSchedulerService) ===== -->
-        <!-- Already included in spring-boot-starter, no extra dependency needed -->
-
-        <!-- ===== Jackson (JSON mapping - WeatherResponse, DTOs) ===== -->
+        <!-- Jackson (JSON mapping) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.15.2</version>
+        </dependency>
 
-        <!-- ===== DevTools (auto-restart during development) ===== -->
+        <!-- DevTools (auto-restart during development) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -109,14 +111,14 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- ===== Lombok (reduces boilerplate - optional but recommended) ===== -->
+        <!-- Lombok (optional but recommended) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
 
-        <!-- ===== Testing ===== -->
+        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -128,11 +130,31 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Actuator (health, metrics) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- OpenAPI/Swagger UI -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <!-- Rate Limiting (Bucket4j) -->
+        <dependency>
+            <groupId>com.bucket4j</groupId>
+            <artifactId>bucket4j-core</artifactId>
+            <version>8.2.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <!-- ===== Spring Boot Maven Plugin (builds executable jar) ===== -->
+            <!-- Spring Boot Maven Plugin (builds executable jar) -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
