@@ -1,0 +1,33 @@
+# Compiled output
+target/
+*.class
+
+# Logs
+*.log
+
+# Spring Boot
+HELP.md
+
+# IDE files
+.idea/
+*.iml
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+bin/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+application-local.properties
+application-secrets.properties
+
+# Maven wrapper (optional — keep if you want mvnw checked in, which is recommended)
+# .mvn/
+# mvnw
+# mvnw.cmd

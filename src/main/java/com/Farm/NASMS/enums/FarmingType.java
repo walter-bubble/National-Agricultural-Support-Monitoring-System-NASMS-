@@ -8,5 +8,5 @@ public enum FarmingType {
     POULTRY,
     AQUACULTURE,
     AGROFORESTRY,
-    CASHCROPS;
+    CASHCROPS
 }

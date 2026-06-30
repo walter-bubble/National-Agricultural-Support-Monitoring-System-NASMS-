@@ -11,7 +11,6 @@ public interface FarmerService {
     Farmer addFarmer(Farmer farmer);
     Farmer updateFarmer(Long id, Farmer farmer);
     void deleteFarmer(Long id);
-
+    Farmer getFarmerByEmail(String email);
 
 }
-;

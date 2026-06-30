@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 
-import javax.annotation.processing.Generated;
+
 
 @Entity
 @Table(name="users", uniqueConstraints={@UniqueConstraint(columnNames = "user_name")})
+@SuppressWarnings("unused")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
