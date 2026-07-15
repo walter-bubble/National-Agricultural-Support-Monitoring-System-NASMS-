@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════════════════════════
+   NASMS – weather/weather.css
+   ═══════════════════════════════════════════════════════════ */
+.region-row { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.region-row label { font-size: 14px; font-weight: 600; color: var(--text-mid); }
+
+.weather-hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #1a3a5c, #2d6a9a, #4a9a7a);
+  border-radius: var(--radius-lg); padding: 40px 36px; color: white; margin-bottom: 28px;
+  transition: background .5s;
+}
+.weather-bg-icon {
+  position: absolute; right: 32px; top: 50%; transform: translateY(-50%);
+  font-size: 110px; opacity: .18; pointer-events: none; transition: .3s;
+}
+.weather-location { font-size: 13px; opacity: .75; margin-bottom: 8px; }
+.weather-temp {
+  font-family: 'Playfair Display', serif; font-size: 5rem;
+  font-weight: 700; line-height: 1; margin-bottom: 8px;
+}
+.weather-desc { font-size: 1.1rem; margin-bottom: 20px; }
+.weather-meta { display: flex; gap: 20px; opacity: .85; flex-wrap: wrap; }
+.weather-meta span { font-size: 13px; }
+
+.forecast-label { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px; }
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 14px; margin-bottom: 28px;
+}
+.forecast-card {
+  background: white; border-radius: var(--radius);
+  padding: 18px 14px; text-align: center;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+  transition: .2s;
+}
+.forecast-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.forecast-day  { font-size: 11px; font-weight: 700; color: var(--text-light); margin-bottom: 10px; letter-spacing: .5px; text-transform: uppercase; }
+.forecast-icon { font-size: 30px; margin-bottom: 10px; }
+.forecast-temp { font-size: 16px; font-weight: 700; color: var(--text-dark); }
+.forecast-low  { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+
+.advisory-box { background: var(--earth-pale); border: 1px solid var(--earth-light); border-radius: 10px; padding: 16px; margin-top: 10px; }
+.advisory-box p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+@media (max-width: 600px) {
+  .weather-temp { font-size: 3.5rem; }
+  .weather-meta { flex-direction: column; gap: 8px; }
+}

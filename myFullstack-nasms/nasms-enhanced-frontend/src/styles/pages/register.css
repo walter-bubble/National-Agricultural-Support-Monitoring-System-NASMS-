@@ -1,0 +1,133 @@
+/* ═══════════════════════════════════════════════════════════
+   NASMS – register/register.css
+   ═══════════════════════════════════════════════════════════ */
+
+.register-page {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 40px 24px;
+  background: linear-gradient(135deg, var(--green-pale) 0%, var(--earth-pale) 100%);
+}
+.register-card {
+  background: white; border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 48px 40px; width: 100%; max-width: 640px;
+}
+
+/* ─── BRAND ─── */
+.form-brand {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+}
+.brand-icon {
+  width: 52px; height: 52px; border-radius: 14px; font-size: 24px;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  display: flex; align-items: center; justify-content: center;
+  color: white; flex-shrink: 0;
+}
+.form-brand h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--green-deep); }
+.form-brand p  { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+/* ─── STEP INDICATOR ─── */
+.steps {
+  display: flex; align-items: center; margin-bottom: 32px;
+}
+.step {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--text-light); white-space: nowrap;
+}
+.step span {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; transition: .3s;
+}
+.step.active       { color: var(--green-deep); }
+.step.active span  { background: var(--green-deep); color: white; border-color: var(--green-deep); }
+.step.done span    { background: var(--green-light); color: white; border-color: var(--green-light); }
+.step-line         { flex: 1; height: 2px; background: var(--border); margin: 0 8px; }
+
+/* ─── STEP PANELS ─── */
+.step-panel { display: none; }
+.step-panel.active { display: block; }
+.step-title { font-size: 15px; font-weight: 700; color: var(--text-mid); margin-bottom: 20px; }
+
+/* ─── FORM GRID ─── */
+.form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+}
+.form-grid.single { grid-template-columns: 1fr; }
+.form-grid .full  { grid-column: 1 / -1; }
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 13px; font-weight: 600; color: var(--text-mid); }
+.form-group input,
+.form-group select {
+  padding: 11px 14px; border: 1.5px solid var(--border);
+  border-radius: 9px; font-family: 'DM Sans', sans-serif;
+  font-size: 14px; color: var(--text-dark);
+  background: var(--cream); transition: border .2s; outline: none;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--green-mid); background: white;
+  box-shadow: 0 0 0 3px rgba(45,122,79,.1);
+}
+.form-group input.input-error,
+.form-group select.input-error { border-color: #e05c5c; }
+
+.field-error { font-size: 12px; color: #e05c5c; min-height: 16px; }
+
+/* ─── INPUT WITH TOGGLE ─── */
+.input-wrap { position: relative; }
+.input-wrap input { width: 100%; padding-right: 40px; }
+.toggle-pwd {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--text-light);
+  cursor: pointer; font-size: 14px; padding: 4px;
+}
+
+/* ─── PASSWORD STRENGTH ─── */
+.pwd-strength {
+  height: 4px; border-radius: 4px; margin-top: 6px;
+  background: var(--border); overflow: hidden;
+  transition: .3s;
+}
+.pwd-strength::after {
+  content: ''; display: block; height: 100%; border-radius: 4px; transition: .3s;
+}
+.pwd-strength.weak   { background: #fdeaea; }
+.pwd-strength.weak::after   { width: 33%; background: #e05c5c; }
+.pwd-strength.fair   { background: #fef9e0; }
+.pwd-strength.fair::after   { width: 66%; background: #d4a96a; }
+.pwd-strength.strong { background: #e0f5e9; }
+.pwd-strength.strong::after { width: 100%; background: #2d7a4f; }
+
+/* ─── STEP ACTIONS ─── */
+.step-actions { display: flex; gap: 12px; }
+.step-actions.two .btn-full { flex: 1; }
+.btn-back {
+  display: flex; align-items: center; gap: 8px;
+  padding: 13px 20px; border: 1.5px solid var(--border);
+  border-radius: 10px; background: white; color: var(--text-mid);
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: .2s; white-space: nowrap;
+}
+.btn-back:hover { border-color: var(--green-mid); color: var(--green-deep); }
+
+/* ─── CHECKBOX ─── */
+.checkbox-label {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; color: var(--text-mid); cursor: pointer; line-height: 1.5;
+}
+.checkbox-label a { color: var(--green-mid); text-decoration: none; }
+.checkbox-label a:hover { text-decoration: underline; }
+
+/* ─── FOOTER TEXT ─── */
+.form-footer { text-align: center; margin-top: 22px; font-size: 13px; color: var(--text-light); }
+.form-footer a { color: var(--green-mid); text-decoration: none; font-weight: 600; }
+
+@media (max-width: 600px) {
+  .register-card { padding: 28px 20px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .steps .step span { width: 24px; height: 24px; font-size: 11px; }
+}
